@@ -199,7 +199,7 @@ void fio_shiftOut1_init(fio_register shift1Register, fio_bit shift1Bit)
 
 
 void fio_shiftOut1(fio_register shift1Register, fio_bit shift1Bit, uint8_t value, 
-                   boolean noLatch)
+                   bool noLatch)
 {
 	/*
 	 * this function are based on Shif1 protocol developed by Roman Black 
@@ -272,7 +272,7 @@ void fio_shiftOut1(fio_register shift1Register, fio_bit shift1Bit, uint8_t value
 	}
 }
 
-void fio_shiftOut1(uint8_t pin, uint8_t value, boolean noLatch)
+void fio_shiftOut1(uint8_t pin, uint8_t value, bool noLatch)
 {
 	fio_shiftOut1(fio_pinToOutputRegister(pin, SKIP),fio_pinToBit(pin),value, noLatch);
 }

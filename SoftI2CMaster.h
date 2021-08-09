@@ -63,7 +63,7 @@
 // Init function. Needs to be called once in the beginning.
 // Returns false if SDA or SCL are low, which probably means 
 // a I2C bus lockup or that the lines are not pulled up.
-boolean __attribute__ ((noinline)) i2c_init(void);
+bool __attribute__ ((noinline)) i2c_init(void);
 
 // Start transfer function: <addr> is the 8-bit I2C address (including the R/W
 // bit). 
@@ -245,7 +245,7 @@ void i2c_wait_scl_high(void)
 }
 
 
-boolean i2c_init(void)
+bool i2c_init(void)
 {
   __asm__ __volatile__ 
     (" cbi      %[SDADDR],%[SDAPIN]     ;release SDA \n\t" 
